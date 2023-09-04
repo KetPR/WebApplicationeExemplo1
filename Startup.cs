@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WebApplicationeExemplo1.Data;
 
 namespace WebApplicationeExemplo1
 {
@@ -11,9 +12,8 @@ namespace WebApplicationeExemplo1
 
         public IConfiguration Configuration { get; }
 
-        public void ConfigureServices(IServiceCollection services)
-        {
-            var _mySQLServerVersion = new MySqlServerVersion(new Version(8, 0, 3));
+        public void ConfigureServices(IServiceCollection services) {
+            var _mySQLServerVersion = new MySqlServerVersion(new Version(8, 0, 33));
 
             services.AddDbContext<ApplicationDbContext>(
                                     options => options.UseMySql(
